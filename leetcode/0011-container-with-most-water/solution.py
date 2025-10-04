@@ -1,27 +1,21 @@
-class Solution(object):
-    def maxArea(self, height):
-        print(height)
-        j = len(height)-1
-        i = 0
-        m = 0
-        c = 0
-        if j+1 == 2:
-            return min(height[i] , height[j])
-        while i!=j:
-            c =min( height[i],height[j]) *(j-i)
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        if len(height) ==2:
+            return min(height[0],height[1])
+        if not height: return
+        i=0
+        j=len(height)-1
+        w = 0
+        while i<j:
+            # print(((j-i)*min(height[i],height[j])))
+            k = ((j-i)*min(height[i],height[j]))
+            if w < k :
+                w = k
+
             if height[i] < height[j]:
                 i+=1
             else:
                 j-=1
-            
-            m = max(m,c)
-        return m
+        return w
 
 
-
-
-        """
-        :type height: List[int]
-        :rtype: int
-        """
-        
