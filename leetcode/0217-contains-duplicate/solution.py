@@ -1,12 +1,5 @@
-class Solution(object):
-    def containsDuplicate(self, nums):
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
         k = set(nums)
-        if len(nums) == len(k):
-            return False
-        else:
-            return True
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
+        return len(nums) != len(k)
         
