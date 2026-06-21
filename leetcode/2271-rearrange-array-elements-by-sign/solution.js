@@ -3,18 +3,18 @@
  * @return {number[]}
  */
 var rearrangeArray = function(nums) {
-    let i = []
-    let j = []
-    for(let num of nums){
-        num>=0?i.push(num):j.push(num)
+    let res = []
+    let pos = 0
+    let nev = 1
+    for(let i=0;i<nums.length;i++){
+        if(nums[i]<0){
+            res[nev] = nums[i]
+            nev+=2
+        }
+        else{
+            res[pos] = nums[i]
+            pos+=2
+        }
     }
-    let a =0
-
-    let c = []
-    while(a<i.length ){
-        c.push(i[a])
-        c.push(j[a])
-        a++
-    }
-    return c
+    return res
 };
