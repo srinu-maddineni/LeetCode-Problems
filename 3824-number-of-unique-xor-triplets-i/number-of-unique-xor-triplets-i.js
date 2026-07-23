@@ -20,10 +20,10 @@ var uniqueXorTriplets = function(nums) {
         return 2
     }
     if(n===1){return 1}
-    let msb =-1
-    while(n>0){
-        n=Math.floor(n / 2)
-        msb++
-    }
+    let msb = Math.floor(Math.log2(n));
+    // while(n>0){
+    //     n=Math.floor(n / 2)
+    //     msb++
+    // }
     return 2**(msb+1)
 };
