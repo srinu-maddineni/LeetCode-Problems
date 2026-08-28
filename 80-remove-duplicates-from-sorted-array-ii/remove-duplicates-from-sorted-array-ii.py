@@ -5,18 +5,26 @@ class Solution(object):
         :rtype: int
         """
 
-        i = 0
-        while i<len(nums):
-            m = 1
-            for j in range(i+1,len(nums)):
-                if nums[i] == nums[j]:
-                    m+=1
-                else: break
-            if m >2:
-                print('k')
-                for k in range(i+m-1,i+1,-1):
-                    nums.pop(k)
-            i+=min(m,2)
-        return len(nums)
+        # i = 0
+        # while i<len(nums):
+        #     m = 1
+        #     for j in range(i+1,len(nums)):
+        #         if nums[i] == nums[j]:
+        #             m+=1
+        #         else: break
+        #     if m >2:
+        #         print('k')
+        #         for k in range(i+m-1,i+1,-1):
+        #             nums.pop(k)
+        #     i+=min(m,2)
+        # return len(nums)
+
+        x = 0
+
+        for i in nums:
+            if x<2 or i !=nums[x-2]:
+                nums[x] =i
+                x+=1
+        return x
 
         
