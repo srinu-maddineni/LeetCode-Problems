@@ -5,10 +5,10 @@ class Solution(object):
         :rtype: str
         """
         c= Counter(s)
-        r = sorted(c.items(),key=lambda x:x[1],reverse=True)
-        print(c)
+        # r = sorted(c.items(),key=lambda x:x[1],reverse=True)
+        
         s =''
-        for (i,j) in r:
+        for i,j in c.most_common():
             s = s+(j*i)
         return s
         
