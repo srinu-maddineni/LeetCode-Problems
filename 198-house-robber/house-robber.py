@@ -11,12 +11,14 @@ class Solution:
         n = len(nums)
         if  n==1:
             return nums[0]
-        dp =[0]*n
-        dp[0] = nums[0]
-        dp[1] = max(nums[1],nums[0])
-        for i in range(2,n):
-            dp[i] = max(nums[i]+dp[i-2],dp[i-1])
-        return dp[-1]
+        # dp =[0]*n
+        # dp[0] = nums[0]
+        # dp[1] = max(nums[1],nums[0])
+        prev1 =0
+        prev2=0
+        for i in range(n):
+            prev1,prev2 = max(nums[i]+prev2,prev1),prev1
+        return prev1
 
 
 
