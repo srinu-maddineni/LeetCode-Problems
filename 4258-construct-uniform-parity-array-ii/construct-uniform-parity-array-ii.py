@@ -14,6 +14,6 @@ class Solution:
         if not small  or not big:
             return True
         
-        return min(nums1) % 2 !=0
+        return mn % 2 !=0
 
         
