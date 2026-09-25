@@ -27,18 +27,31 @@ class Solution:
             if not m.get(nums[i]):
                 m[nums[i]] =0
             m[nums[i]] = m.get(nums[i])+1
-        r=0
+
+        b = [[] for _ in range(n+1)]
         for i,j in m.items():
-            ans.append([i,j])
+            b[j].append(i)
 
-        # print(ans)
-        ans.sort(key=lambda x:x[1],reverse=True)
-        # print(ans)
         res = []
-        for i in ans:
-            if r>=k:
-                break
-            res.append(i[0])
-            r+=1
+        for i in range(len(b)-1,-1,-1):
+            for j in b[i]:
 
+                if len(res) ==k:
+                    return res
+                res.append(j)
         return res
+
+        # r=0
+        # for i,j in m.items():
+        #     ans.append([i,j])
+
+        # ans.sort(key=lambda x:x[1],reverse=True)
+
+        # res = []
+        # for i in ans:
+        #     if r>=k:
+        #         break
+        #     res.append(i[0])
+        #     r+=1
+
+        # return res
