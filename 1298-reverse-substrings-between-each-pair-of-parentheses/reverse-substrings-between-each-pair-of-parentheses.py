@@ -7,11 +7,11 @@ class Solution:
         for i in range(n):
             if s[i] == '(':
                 stk1.append(len(stk))
-                continue
-            if s[i] == ')':
+            
+            elif s[i] == ')':
                 j = stk1.pop()
                 k = len(stk)
-                stk = stk[:j]+stk[j:k][::-1]
+                stk[j:k] =stk[j:k][::-1]
             else:
                 stk.append(s[i])
         return ''.join(stk)
